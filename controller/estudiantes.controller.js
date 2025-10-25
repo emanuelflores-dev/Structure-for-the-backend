@@ -1,3 +1,5 @@
+import db from "../database/conexion.js";
+
 class EstudiantesController {
   constructor() {}
 
@@ -6,7 +8,8 @@ class EstudiantesController {
   }
 
   consultarDetalle(req, res) {
-    res.json({ message: "Consulta de un estidiante" });
+    const { id } = req.params;
+    res.json({ message: `Se consulto al Estudiante con ID: ${id}` });
   }
 
   ingresar(req, res) {
